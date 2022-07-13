@@ -30,6 +30,13 @@
             
                 <ul class="plugin-nodes collapsible-content">
                     {% for node in site.plugins %} 
+                        {% if node.plugin == plugin.name and node.sub == nil and node.subs == nil %}
+                        <li class="plugin-node">
+                            <a href="{{ node.permalink }}">{{ node.name }}</a>   
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% for node in site.plugins %} 
                         {% if node.plugin == plugin.name and node.sub == nil and node.subs %}
                             <li class="plugin-node">
                                 <input id="col-{{ plugin.name  | replace: " ", "" }}-{{ node.name  | replace: " ", "" }}" class="toggle" type="checkbox" onchange="toggleCollapse(event)">
@@ -49,13 +56,6 @@
                                     {% endfor %}
                                 </ul>
                             </li>
-                        {% endif %}
-                    {% endfor %}
-                    {% for node in site.plugins %} 
-                        {% if node.plugin == plugin.name and node.sub == nil and node.subs == nil %}
-                        <li class="plugin-node">
-                            <a href="{{ node.permalink }}">{{ node.name }}</a>   
-                        </li>
                         {% endif %}
                     {% endfor %}
                 </ul>
