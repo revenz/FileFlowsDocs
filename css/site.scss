@@ -232,3 +232,17 @@ tr:hover td {
     position: relative;
     top: 0.5rem;
 }
+
+.top-nav {
+    list-style: none;
+    li {
+        display:inline-block;
+    }
+    a {        
+        color: var(--color);
+        opacity: 0.7;
+        &:hover {
+            opacity: unset;
+        }
+    }
+}
