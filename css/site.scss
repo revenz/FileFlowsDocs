@@ -240,7 +240,7 @@ tr:hover td {
     opacity:0.5;
     display: flex;
     flex-direction: row;
-    &:focus {
+    &:focus-within  {
         opacity:unset;
         border-color:var(--accent);
     }
