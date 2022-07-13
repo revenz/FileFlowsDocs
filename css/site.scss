@@ -330,3 +330,9 @@ tr:hover td {
 .try-out {
     display:none;
 }
+
+.swagger-ui {
+    .topbar, .information-container  {
+        display:none;
+    }
+}
