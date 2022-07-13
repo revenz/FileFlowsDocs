@@ -1,0 +1,27 @@
+---
+---
+[
+    {% assign sorted_pages = site.pages | sort:"order" %}
+    {% for page in sorted_pages %}
+    {
+      "title"    : "{{ page.name }}",
+      "url"      : "{{ site.baseurl }}{{ page.permalink }}",
+      "description" : "{{ page.description | strip_html | strip_newlines | escape }}"
+    } {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    {% assign sorted_guides = site.guides | sort:"order" %}
+    {% for page in sorted_guides %}
+    {
+      "title"    : "{{ page.name }}",
+      "url"      : "{{ site.baseurl }}{{ page.permalink }}",
+      "description" : "{{ page.description | strip_html | strip_newlines | escape }}"
+    } {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    {% for page in site.plugins %}
+    {
+      "title"    : "{{ page.name }}",
+      "url"      : "{{ site.baseurl }}{{ page.permalink }}",
+      "description" : "{{ page.description | strip_html | strip_newlines | escape }}"
+    } {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
