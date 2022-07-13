@@ -67,6 +67,11 @@ function addCopyCodeButton(container){
 }
 
 async function navigateTo(url){
+    if(url === '/api-help')
+    {
+        window.location = url;
+        return;
+    }
     try
     {
         setSelectedMenuLink(url);
