@@ -289,6 +289,7 @@ tr:hover td {
     border: solid 1px var(--border-color);
     width: 100%;
     padding:0;
+    filter: drop-shadow(1px 4px 4px #3d3d3d);
     &:empty {
         display:none;
     }
@@ -311,7 +312,8 @@ tr:hover td {
             border-top:solid 1px var(--border-color);
         }
         .title {
-            color:var(--accent);
+            color: var(--color);
+            font-weight: 600;
         }
         .content {
             color:rgba(var(--color-rgb), 0.7);
