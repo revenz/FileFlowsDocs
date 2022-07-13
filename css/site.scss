@@ -258,7 +258,8 @@ tr:hover td {
     }
 }
 
-#results-container {
+#results-container {    
+    list-style:none;
     li {        
         display: flex;
         flex-direction: row;
