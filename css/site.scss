@@ -288,16 +288,16 @@ tr:hover td {
     background: var(--base);
     border: solid 1px var(--border-color);
     width: 100%;
-    padding:0.5rem;
+    padding:0;
     &:empty {
         display:none;
     }
     li {        
         display: flex;
-        display: flex;
         flex-direction: column;
         text-align: left;
-        height:5rem;
+        height: 4.5rem;
+        padding: 0 0.5rem;
         a {            
             max-height: 4.5rem;
             text-decoration: none;
@@ -319,7 +319,7 @@ tr:hover td {
             overflow:hidden;
         }
         &:hover {
-            background: rgba(var(--accent-rgb), 0.3);
+            background: rgba(var(--accent-rgb), 0.2);
         }
     }
 }
