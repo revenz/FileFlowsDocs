@@ -6,7 +6,7 @@
     {
       "title"    : "{{ page.name }}",
       "url"      : "{{ site.baseurl }}{{ page.permalink }}",
-      "description" : "test { page.content | strip_html | strip_newlines |regex:/^\\/,"\\\\slash" | replace "\", "\\\\" | escape | trim }}"
+      "description" : "test {{ page.content | strip_html | strip_newlines |regex:/^\\/,"\\\\slash" | replace "\", "\\\\" | escape | trim }}"
     } {% unless forloop.last %},{% endunless %}
     {% endfor %}
     {% assign sorted_guides = site.guides | sort:"order" %}
