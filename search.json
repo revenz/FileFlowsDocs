@@ -4,9 +4,11 @@
     {% assign sorted_pages = site.pages | sort:"order" %}
     {% for page in sorted_pages %}
     {
-      "title"    : "{{ page.name }}",
-      "url"      : "{{ site.baseurl }}{{ page.permalink }}",
-      "description" : {{ page.content | strip_html | strip_newlines | jsonify }}
+      {% if page.name != "Versions"  %}     
+        "title"    : "{{ page.name }}",
+        "url"      : "{{ site.baseurl }}{{ page.permalink }}",
+        "description" : {{ page.content | strip_html | strip_newlines | jsonify }}
+      {% endif %}
     },
     {% endfor %}
     {% assign sorted_guides = site.guides | sort:"order" %}
