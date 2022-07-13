@@ -281,6 +281,9 @@ tr:hover td {
     border: solid 1px var(--border-color);
     width: 100%;
     padding:0.5rem;
+    &:empty {
+        display:none;
+    }
     li {        
         display: flex;
         display: flex;
