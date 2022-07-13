@@ -6,7 +6,7 @@
     {
       "title"    : "{{ page.name }}",
       "url"      : "{{ site.baseurl }}{{ page.permalink }}",
-      "description" : "test2 {{ page.content | strip_html | strip_newlines | regex:/^\\\/,"\\\\slash" | replace "\", "\\\\" | escape }}"
+      "description" : "test3 {{ page.content | strip_html | strip_newlines | regex:/^\\\\/,"\\\\slash" | replace "\\", "\\\\" | escape }}"
     } {% unless forloop.last %},{% endunless %}
     {% endfor %}
     {% assign sorted_guides = site.guides | sort:"order" %}
@@ -14,14 +14,14 @@
     {
       "title"    : "{{ page.name }}",
       "url"      : "{{ site.baseurl }}{{ page.permalink }}",
-      "description" : "test2 {{ page.content | strip_html | strip_newlines | regex:/^\\\/,"\\\\slash" | replace "\", "\\\\" | escape }}"
+      "description" : "test3 {{ page.content | strip_html | strip_newlines | regex:/^\\\\/,"\\\\slash" | replace "\\", "\\\\" | escape }}"
     } {% unless forloop.last %},{% endunless %}
     {% endfor %}
     {% for page in site.plugins %}
     {
       "title"    : "{{ page.name }}",
       "url"      : "{{ site.baseurl }}{{ page.permalink }}",
-      "description" : "test2 {{ page.content | strip_html | strip_newlines | regex:/^\\\/,"\\\\slash" | replace "\", "\\\\" | escape }}"
+      "description" : "test3 {{ page.content | strip_html | strip_newlines | regex:/^\\\\/,"\\\\slash" | replace "\\", "\\\\" | escape }}"
     } {% unless forloop.last %},{% endunless %}
     {% endfor %}
 ]
