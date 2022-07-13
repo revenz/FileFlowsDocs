@@ -335,4 +335,7 @@ tr:hover td {
     .topbar, .information-container  {
         display:none;
     }
+    tr:hover td {
+        background: unset !important;
+    }
 }
