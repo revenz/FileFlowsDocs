@@ -1,7 +1,13 @@
 <div id="search-container">
-    <input type="text" id="search-input" placeholder="Type your search here..." autofocus>
-    <ul id="results-container"></ul>
-    
+    <div class="search-inner">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Type your search here..." autofocus>
+        </div>
+        <div class="search-results">
+            <ul id="results-container"></ul>    
+        </div>
+    </div>
 </div>
         
 <script>
@@ -9,6 +15,6 @@
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
       json: '/search.json',
-        searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a><span class="content">{content}</span></li>'
+        searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a><span class="content">{description}</span></li>'
     })
 </script>
