@@ -1,0 +1,18 @@
+<div class="flow-part vertical {{include.type}} size-2">
+    {% if include.input %}
+    <div class="inputs">
+        <div x-input="1" class="input input-1">
+            <div></div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="icon-wrapper"><span class="icon {{ include.icon }}"></span></div>
+    <div class="name">{{include.name}}</div>
+    <div class="outputs">
+        {% for output in (1..include.outputs) %}
+        <div x-output="{{ include.output }}" class="output output-{{include.output}}">
+            <div></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="side-bar">
+    <div class="pages">
+        <h3>General</h3>
+        <ul>
+        {% assign sorted_pages = site.pages | sort:"order" %}
+        {% for page in sorted_pages %}
+            <li>
+                <a href="{{ page.permalink }}">{{ page.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="guides">
+        <h3>Guides</h3>
+        <ul>
+        {% assign sorted_guides = site.guides | sort:"order" %}
+        {% for page in sorted_guides %}            
+            <li>
+                <a href="{{ page.permalink }}">{{ page.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="plugins">
+        <h3>Plugins</h3>
+        {% for plugin in site.plugins %}
+            {% if plugin.plugin == nil  %}        
+                <input id="col-{{ plugin.name  | replace: " ", "" }}" class="toggle" type="checkbox" onchange="toggleCollapse(event)">
+                <label for="col-{{ plugin.name  | replace: " ", "" }}" class="lbl-toggle">{{ plugin.name }}</label>        
+            
+                <ul class="plugin-nodes collapsible-content">
+                    {% for node in site.plugins %} 
+                        {% if node.plugin == plugin.name and node.sub == nil and node.subs %}
+                            <li class="plugin-node">
+                                <input id="col-{{ plugin.name  | replace: " ", "" }}-{{ node.name  | replace: " ", "" }}" class="toggle" type="checkbox" onchange="toggleCollapse(event)">
+                                <label for="col-{{ plugin.name  | replace: " ", "" }}-{{ node.name  | replace: " ", "" }}" class="lbl-toggle">{{ node.name }}</label>   
+                                <ul class="plugin-node-subs collapsible-content">
+                                    {% if node.nocontent != true %}
+                                    <li class="plugin-node-sub">
+                                        <a href="{{ node.permalink }}">{{ node.name }}</a>   
+                                    </li>
+                                    {% endif %}
+                                    {% for sub in site.plugins %} 
+                                        {% if sub.plugin == plugin.name and node.name == sub.sub %}
+                                            <li class="plugin-node-sub">
+                                                <a href="{{ sub.permalink }}">{{ sub.name }}</a>   
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% for node in site.plugins %} 
+                        {% if node.plugin == plugin.name and node.sub == nil and node.subs == nil %}
+                        <li class="plugin-node">
+                            <a href="{{ node.permalink }}">{{ node.name }}</a>   
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

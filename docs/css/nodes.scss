@@ -1,0 +1,272 @@
+---
+---
+
+.flow-part {
+    width: 14rem;
+    min-width:14rem;
+    float: right;
+    margin: 0 0 0rem 2rem;
+    position: relative;
+    top: -2rem;
+}
+
+.flow-part {
+    text-align: center;
+    border-radius: 0.75rem;
+    border:solid 3px transparent;
+    display: flex;
+    flex-direction: row;
+    outline: unset !important;
+    position:relative;
+
+
+    // flow colours
+    --flow-logic: var(--orange);
+    --flow-input: var(--indigo);
+    --flow-output: var(--green);
+    --flow-process: var(--cyan);
+    --flow-build-start: var(--teal);
+    --flow-build-end: var(--teal);
+    --flow-build-part: var(--blue);
+    --flow-communication: var(--yellow);
+    --flow-failure: var(--error);
+    --flow-script:#c14242;
+
+    &.Logic {
+        border-color:var(--flow-logic);
+    }
+    &.Input {
+        border-color:var(--flow-input);
+    }
+    &.Output {
+        border-color:var(--flow-output);
+    }
+    &.Process {
+        border-color:var(--flow-process);
+    }
+    &.BuildPart {
+        border-color:var(--flow-build-part);
+    }
+    &.BuildStart {
+        border-color:var(--flow-build-start);
+    }
+    &.BuildEnd {
+        border-color:var(--flow-build-end);
+    }
+    &.Communication {
+        border-color:var(--flow-communication);
+    }
+    &.Failure {
+        border-color:var(--flow-failure);
+    }
+    &.Script {
+        border-color:var(--flow-script);
+    }
+
+    .icon-wrapper {
+        width: 2rem;
+        border-right: solid 3px;
+        margin: 0;
+        padding-left: 0.25rem;
+        display: flex;
+
+        .icon {
+            margin: auto;
+        }
+    }
+
+    .name {
+        flex-grow: 1;
+        margin: auto 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    * {
+        user-select: none;
+    }
+
+    &.vertical {
+        min-height: 4rem;
+
+        &.size-1, &.size-2, &.size-3 {
+            width: 12rem;
+        }
+
+        @for $i from 4 through 20 {
+            &.size-#{$i} {
+                width: calc(12rem + #{$i}rem);
+            }
+        }
+    }
+
+    &:not(.vertical) {
+        &.size-1 {
+            height: 2.5rem;
+        }
+
+        @for $i from 2 through 20 {
+            &.size-#{$i} {
+                height: calc(#{$i} * 2rem);
+            }
+        }
+    }
+
+    &.Logic:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-logic) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-logic) !important;
+        }
+    }
+
+    &.Input:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-input) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-input) !important;
+        }
+    }
+
+    &.Output:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-output) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-output) !important;
+        }
+    }
+
+    &.Process:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-process) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-process) !important;
+        }
+    }
+
+    &.BuildStart:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-build-start) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-build-start) !important;
+        }
+    }
+
+    &.BuildEnd:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-build-end) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-build-end) !important;
+        }
+    }
+
+    &.BuildPart:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-build-part) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-build-part) !important;
+        }
+    }
+
+    &.Communication:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-communication) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-communication) !important;
+        }
+    }
+
+    &.Failure:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-failure) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-failure) !important;
+        }
+    }
+    
+    &.Script:not(.selected) {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--flow-script) !important;
+        }
+
+        .connected > div {
+            background-color: var(--flow-script) !important;
+        }
+    }
+
+    &.selected {
+        .icon-wrapper, .input > div, .output > div {
+            border-color: var(--accent) !important;
+        }
+
+        .connected > div {
+            background-color: var(--accent) !important;
+        }
+    }
+
+    .inputs {
+        left: -0.65rem;
+    }
+
+    .outputs {
+        right: -0.65rem;
+    }
+
+
+    .inputs, .outputs {
+        position: absolute;
+        width: 1rem;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+
+        .input, .output {
+            margin: auto;
+
+            > div {
+                width: 1rem;
+                height: 1rem;
+                margin: 0.5rem;
+                border-radius: 0.25rem;
+                background-color: var(--base);
+                border: solid 2px;
+            }
+        }
+    }
+
+    &.vertical {
+        .inputs, .outputs {
+            top: -1rem;
+            bottom: unset;
+            left: 30px;
+            right: 0;
+            flex-direction: row;
+            width: unset;
+            z-index:2;
+        }
+        
+        
+        .outputs {
+            top: unset;
+            bottom: -1rem;
+        }
+    }
+}

@@ -1,0 +1,225 @@
+---
+--- 
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src:url('/webfonts/SourceSansPro-Regular.woff') format('woff');
+}
+
+:root {
+    --color: rgb(240, 240, 240);
+    --color-rgb: 240, 240, 240;
+    --color-darker: rgb(220, 220, 220);
+    --color-darke-rgb: 220, 220, 220;
+    --color-darkest: rgb(160, 160, 160);
+    --color-darkest-rgb: 160, 160, 160;
+    --base: #1a1a1a;
+    --base-rgb: 7, 18, 20;
+    --base-darker: rgb(6, 17, 19);
+    --base-darker-rgb: 6, 17, 19;
+    --base-darkest: rgb(4, 11, 12);
+    --base-darkest-rgb: 4, 11, 12;
+    --accent: rgb(255, 0, 144);
+    --accent-rgb: 255, 0, 144;
+    --border-color: rgba(var(--color-rgb), 0.1);
+    --input-background: rgb(49, 49, 49);
+    --input-background-rgb: 49, 49, 49;
+    --primary: #0366d6;
+    --error: #ff4d76;
+
+
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+
+
+    --sidebar-width:16rem;
+    --max-width:1200px;
+}
+
+html {
+    font-size: 14px;
+    font-family: "Source Sans Pro",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    color: var(--color);
+    background: var(--base);
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+.body-wrapper {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    position:relative;
+}
+
+@media screen and (min-width: 1450.001px) {
+    .body-wrapper {
+        margin-left:calc(calc(100vw - var(--max-width)) / 2 - 2rem);
+    }
+}
+
+@media screen and (max-width:1450px){
+    .body-wrapper {
+        margin-left:0;
+    }
+    section.content {
+        max-width: calc(100vw - var(--sidebar-width) - 12rem) !important;
+    }
+    .toc{
+        left:unset !important;
+        right:1rem !important;
+    }
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--accent);
+    }
+}
+
+.main { 
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: absolute;
+    top: 4rem;
+    left: var(--sidebar-width);
+    bottom: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 2rem 2rem 0;
+}
+
+h1 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin: 1rem 0;
+}
+
+
+section.content {
+    flex-grow:1;
+    max-width: calc(var(--max-width) - var(--sidebar-width) - 1rem);
+    img {
+        max-width: calc(100% - 2rem);
+        display: block;
+        margin: 1rem;
+    }
+
+    h1, h2, h3, h4, h5 {
+        border-bottom: solid 1px var(--border-color);
+        padding-bottom: 0.5rem;
+    }
+    h2 {
+        font-size:1.2rem;
+    }
+    h3 {
+        font-size:1.125rem;
+    }
+    h4 {
+        font-size:1.05rem;
+    }
+    h5 {
+        font-size:1rem;
+    }
+    
+    h2, h3, h4, h5
+    {
+        margin-top:2.5rem;
+    }
+    
+}
+
+footer {
+    text-align: center;
+    margin:1rem 0;
+    font-size: 0.9rem;
+    opacity: 0.5;
+}
+
+.toc {
+    display:none;
+    position: fixed;
+    top: 7rem;
+    left:calc(50vw + (var(--max-width) / 2) + 3rem);
+    ul {
+        list-style: none;
+        margin:0;
+        padding:0;
+
+    }
+    a {
+        color:#808080;      
+        &:hover {
+            text-decoration: none;
+            color:var(--accent);
+            font-weight:bold;
+        }      
+    }
+    li
+    {        
+        list-style: none;
+    }
+    > li {
+        margin-top:1rem;
+    }
+}
+
+hr {
+    margin:4rem 0;
+    color: var(--border-color);
+}
+
+table {
+    width:100%;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: solid 1px var(--border-color);
+    text-align: left !important;
+}
+th {    
+    background-color: rgb(49, 49, 49);
+    padding:0.5rem;
+}
+td {    
+    padding:0.25rem;
+}
+
+tr:hover td {
+    background:rgba(var(--accent-rgb), 0.4);
+}

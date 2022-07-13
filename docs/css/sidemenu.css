@@ -1,0 +1,84 @@
+--- --- .side-bar {
+  font-size: 0.9rem;
+  overflow: auto;
+  position: absolute;
+  left: 0;
+  top: 6rem;
+  bottom: 1rem;
+  padding: 0 0.5rem 0 2rem;
+  width: var(--sidebar-width);
+  border-right: solid 1px var(--border-color);
+  direction: rtl;
+  /** collapsable styling */
+}
+--- --- .side-bar > div {
+  direction: ltr;
+}
+--- --- .side-bar > div + div {
+  margin-top: 1.5rem;
+}
+--- --- .side-bar h3 {
+  font-size: 1rem;
+  padding-bottom: 0.25rem;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+--- --- .side-bar ul {
+  list-style: none;
+  margin: 0 0 0 1rem;
+  padding: 0;
+}
+--- --- .side-bar a {
+  text-decoration: none;
+  color: #808080;
+}
+--- --- .side-bar a:hover {
+  color: var(--accent);
+}
+--- --- .side-bar li {
+  padding: 0.25rem 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+--- --- .side-bar li.selected a {
+  color: var(--accent) !important;
+  font-weight: bold;
+}
+--- --- .side-bar .plugins > label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+--- --- .side-bar input[type=checkbox] {
+  display: none;
+}
+--- --- .side-bar .lbl-toggle {
+  display: block;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+--- --- .side-bar .lbl-toggle:hover {
+  color: var(--accent);
+}
+--- --- .side-bar .lbl-toggle::before {
+  content: " ";
+  display: inline-block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  vertical-align: middle;
+  margin-right: 0.7rem;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+--- --- .side-bar .toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+--- --- .side-bar .collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+--- --- .side-bar .toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 1000vh;
+}
