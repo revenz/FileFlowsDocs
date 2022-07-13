@@ -10190,19 +10190,16 @@
 .swagger-ui .expand-methods svg,
 .swagger-ui .expand-operation svg {
   height: 20px;
-  width: 20px
+  width: 20px;
+  fill: var(--color);
 }
 
 .swagger-ui .expand-methods {
   padding: 0 10px
 }
 
-.swagger-ui .expand-methods:hover svg {
-  fill: #404040
-}
-
 .swagger-ui .expand-methods svg {
-  fill: #707070;
+  fill: var(--color);
   transition: all .3s
 }
 
