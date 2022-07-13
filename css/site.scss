@@ -266,14 +266,18 @@ tr:hover td {
 .top-nav {
     list-style: none;
     margin:0;
-    li {
-        display:inline-block;
-    }
-    a {        
+    a { 
+        padding: 0.5rem 0.5rem !important;
         color: var(--color);
         opacity: 0.7;
         &:hover {
             opacity: unset;
+        }
+    }
+    li {
+        display:inline-block;
+        &:last-child a{
+            padding-right:0.25rem !important;
         }
     }
 }
