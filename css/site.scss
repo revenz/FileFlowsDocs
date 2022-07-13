@@ -297,6 +297,16 @@ tr:hover td {
         display: flex;
         flex-direction: column;
         text-align: left;
+        height:5rem;
+        a {            
+            max-height: 4.5rem;
+            text-decoration: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        span {
+            display:block;
+        }
         + li {
             border-top:solid 1px var(--border-color);
         }
@@ -305,8 +315,6 @@ tr:hover td {
         }
         .content {
             color:rgba(var(--color-rgb), 0.7);
-            flex-grow:1;
-            height:3rem;
             text-overflow: hidden;
             overflow:hidden;
         }
