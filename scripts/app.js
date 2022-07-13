@@ -67,7 +67,7 @@ function addCopyCodeButton(container){
 }
 
 async function navigateTo(url){
-    if(url === '/api-help')
+    if(url && url.indexOf('/api-help') >= 0)
     {
         window.location = url;
         return;
