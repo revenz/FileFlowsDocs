@@ -228,6 +228,9 @@ tr:hover td {
     flex-grow:1;
     text-align: right;    
 }
+.search-inner {
+    position:relative;
+}
 .search-box {    
     position: relative;
     top: 0.5rem;
@@ -252,6 +255,7 @@ tr:hover td {
         border:none;
         outline:none;
         flex-grow:1;
+        color:var(--color);
     }
 }
 
@@ -271,12 +275,18 @@ tr:hover td {
 }
 
 #results-container {    
-    list-style:none;
+    list-style: none;
+    position: absolute;
+    background: var(--base);
+    border: solid 1px var(--border-color);
+    width: 100%;
     li {        
         display: flex;
-        flex-direction: row;
-        a {
-            width:10rem;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        + li {
+            border-top:solid 1px var(--border-color);
         }
         span {
             flex-grow:1;
