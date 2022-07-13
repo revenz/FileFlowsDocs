@@ -233,7 +233,7 @@ tr:hover td {
 }
 .search-box {    
     position: relative;
-    top: 0.5rem;
+    top: 1px;
     width: min(100%, 20rem);
     background: var(--input-background);
     border: solid 1px transparent;
@@ -248,7 +248,11 @@ tr:hover td {
         border-color:var(--accent);
     }
     .fas {
-        margin-right:0.5rem;
+        margin-right: 0.5rem;
+        position: relative;
+        top: 4px;
+        left: 1px;
+        font-size: 1.25rem;
     }
     input {
         background:transparent;
@@ -292,7 +296,11 @@ tr:hover td {
         + li {
             border-top:solid 1px var(--border-color);
         }
-        span {
+        .title {
+            color:var(--accent);
+        }
+        .content {
+            color:rgba(var(--color-rgb), 0.7);
             flex-grow:1;
             height:3rem;
             text-overflow: hidden;
