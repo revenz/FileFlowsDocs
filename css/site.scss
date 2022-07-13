@@ -228,7 +228,7 @@ tr:hover td {
     flex-grow:1;
     text-align: right;    
 }
-#search-input {    
+.search-box {    
     position: relative;
     top: 0.5rem;
     width: min(100%, 20rem);
@@ -236,6 +236,11 @@ tr:hover td {
     border: solid 1px transparent;
     padding: 0.5rem;
     color: var(--color);
+    input {
+        background:transparent;
+        border:none;
+        outline:none;
+    }
 }
 
 .top-nav {
@@ -249,6 +254,22 @@ tr:hover td {
         opacity: 0.7;
         &:hover {
             opacity: unset;
+        }
+    }
+}
+
+#results-container {
+    li {        
+        display: flex;
+        flex-direction: row;
+        a {
+            width:10rem;
+        }
+        span {
+            flex-grow:1;
+            height:3rem;
+            text-overflow: hidden;
+            overflow:hidden;
         }
     }
 }
