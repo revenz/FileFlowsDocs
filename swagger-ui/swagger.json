@@ -1,0 +1,6808 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "FileFlows",
+      "version": "v1"
+    },
+    "paths": {
+      "/api/dashboard": {
+        "get": {
+          "tags": [
+            "Dashboard"
+          ],
+          "summary": "Get all dashboards in the system",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Dashboard"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Dashboard"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Dashboard"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Dashboard"
+          ],
+          "summary": "Saves a dashboard",
+          "requestBody": {
+            "description": "The dashboard being saved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dashboard"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dashboard"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dashboard"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Dashboard"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Dashboard"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Dashboard"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/dashboard/list": {
+        "get": {
+          "tags": [
+            "Dashboard"
+          ],
+          "summary": "Get a list of all dashboards",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ListOption"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ListOption"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ListOption"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/dashboard/{uid}/Widgets": {
+        "get": {
+          "tags": [
+            "Dashboard"
+          ],
+          "summary": "Get a dashboard",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the dashboard",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/WidgetUiModel"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/WidgetUiModel"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/WidgetUiModel"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/dashboard/{uid}": {
+        "delete": {
+          "tags": [
+            "Dashboard"
+          ],
+          "summary": "Delete a dashboard from the system",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the dashboard to delete",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Dashboard"
+          ],
+          "summary": "Saves a dashboard",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the dashboard",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "The Widgets to save",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Widget"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Widget"
+                  }
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Widget"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Dashboard"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Dashboard"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Dashboard"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/download": {
+        "get": {
+          "tags": [
+            "Download"
+          ],
+          "summary": "Downloads the node from the server",
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/flow": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Get all flows in the system",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Flow"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Flow"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Flow"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Delete flows from the system",
+          "requestBody": {
+            "description": "A reference model containing UIDs to delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Saves a flow",
+          "parameters": [
+            {
+              "name": "uniqueName",
+              "in": "query",
+              "description": "Whether or not a new unique name should be generated if the name already exists",
+              "schema": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "The flow being saved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Flow"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Flow"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Flow"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/list-all": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowListModel"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowListModel"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowListModel"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/failure-flow/by-library/{libraryUid}": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Gets the failure flow for a particular library",
+          "parameters": [
+            {
+              "name": "libraryUid",
+              "in": "path",
+              "description": "the UID of the library",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/export/{uid}": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Exports a specific flow",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The Flow UID",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/flow/import": {
+        "post": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Imports a flow",
+          "requestBody": {
+            "description": "The json data to import",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/duplicate/{uid}": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Duplicates a flow",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the flow",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/template/{uid}": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Generates a template for of a flow",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The Flow UID",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/flow/state/{uid}": {
+        "put": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Sets the enabled state of a flow",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The flow UID",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "enable",
+              "in": "query",
+              "description": "Whether or not the flow should be enabled",
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/set-default/{uid}": {
+        "put": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Sets the default state of a flow",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The flow UID",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "default",
+              "in": "query",
+              "description": "Whether or not the flow should be the default",
+              "schema": {
+                "type": "boolean",
+                "default": true
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/flow/{uid}": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Get a flow",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The Flow UID",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Flow"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/elements": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Gets all nodes in the system",
+          "parameters": [
+            {
+              "name": "type",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/FlowType"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowElement"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowElement"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowElement"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/{uid}/rename": {
+        "put": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Rename a flow",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The Flow UID",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "name",
+              "in": "query",
+              "description": "The new name",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/flow/{uid}/variables": {
+        "post": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Get variables for flow parts",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The specific part UID",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "isNew",
+              "in": "query",
+              "description": "If the flow part is a new part",
+              "schema": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "The flow parts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FlowPart"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FlowPart"
+                  }
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FlowPart"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": { }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": { }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": { }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/flow/templates": {
+        "get": {
+          "tags": [
+            "Flow"
+          ],
+          "summary": "Get flow templates",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/FlowTemplateModel"
+                      }
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/FlowTemplateModel"
+                      }
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/FlowTemplateModel"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library": {
+        "get": {
+          "tags": [
+            "Library"
+          ],
+          "summary": "Gets all libraries in the system",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Library"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Library"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Library"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Library"
+          ],
+          "summary": "Saves a library",
+          "requestBody": {
+            "description": "The library to save",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Library"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Library"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Library"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Library"
+          ],
+          "summary": "Delete libraries from the system",
+          "parameters": [
+            {
+              "name": "deleteLibraryFiles",
+              "in": "query",
+              "description": "[Optional] if libraries files should also be deleted for this library",
+              "schema": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "A reference model containing UIDs to delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/library/{uid}": {
+        "get": {
+          "tags": [
+            "Library"
+          ],
+          "summary": "Get a library",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the library",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library/state/{uid}": {
+        "put": {
+          "tags": [
+            "Library"
+          ],
+          "summary": "Set the enable state for a library",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the library",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "enable",
+              "in": "query",
+              "description": "true if enabled, otherwise false",
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Library"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library/rescan": {
+        "put": {
+          "tags": [
+            "Library"
+          ],
+          "summary": "Rescans libraries",
+          "requestBody": {
+            "description": "A reference model containing UIDs to rescan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/library/templates": {
+        "get": {
+          "tags": [
+            "Library"
+          ],
+          "summary": "Gets a list of library templates",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Library"
+                      }
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Library"
+                      }
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Library"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/next-file": {
+        "post": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Gets the next library file for processing, and puts it into progress",
+          "requestBody": {
+            "description": "The arguments for the call",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NextLibraryFileArgs"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NextLibraryFileArgs"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NextLibraryFileArgs"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/NextLibraryFileResult"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/NextLibraryFileResult"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/NextLibraryFileResult"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/list-all": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Lists all of the library files, only intended for the UI",
+          "parameters": [
+            {
+              "name": "status",
+              "in": "query",
+              "description": "The status to list",
+              "schema": {
+                "$ref": "#/components/schemas/FileStatus"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "The page to get",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "default": 0
+              }
+            },
+            {
+              "name": "pageSize",
+              "in": "query",
+              "description": "The number of items to fetch",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "default": 0
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFileDatalistModel"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFileDatalistModel"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFileDatalistModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Gets all library files in the system",
+          "parameters": [
+            {
+              "name": "status",
+              "in": "query",
+              "description": "The status to get, if missing will return all library files",
+              "schema": {
+                "$ref": "#/components/schemas/FileStatus"
+              }
+            },
+            {
+              "name": "skip",
+              "in": "query",
+              "description": "The amount of items to skip",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "default": 0
+              }
+            },
+            {
+              "name": "top",
+              "in": "query",
+              "description": "The amount of items to grab, 0 to grab all",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "default": 0
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Update a library file",
+          "requestBody": {
+            "description": "The library file to update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryFile"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryFile"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryFile"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFile"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFile"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFile"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Delete library files from the system",
+          "requestBody": {
+            "description": "A reference model containing UIDs to delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/library-file/upcoming": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Get next 10 upcoming files to process",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/recently-finished": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Gets the last 10 successfully processed files",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/status": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Gets the library status overview",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryStatus"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryStatus"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryStatus"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/{uid}": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Get a specific library file",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the library file",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFile"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFile"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LibraryFile"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/{uid}/log/download": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Downloads a  log of a library file",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the library file",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/library-file/{uid}/log": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Get the log of a library file",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the library file",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "lines",
+              "in": "query",
+              "description": "Optional number of lines to fetch",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "default": 0
+              }
+            },
+            {
+              "name": "html",
+              "in": "query",
+              "description": "if the log should be html if possible",
+              "schema": {
+                "type": "boolean",
+                "default": true
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/{uid}/full-log": {
+        "put": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Saves the full log for a library file\r\nCall this after processing has completed for a library file",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The uid of the library file",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "the log",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/move-to-top": {
+        "post": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "A reference model of library files to move to the top of the processing queue",
+          "requestBody": {
+            "description": "The reference model of items in order to move",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/library-file/exists-on-server/{uid}": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Checks if a library file exists on the server",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The Uid of the library file to check",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/reprocess": {
+        "post": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Reprocess library files",
+          "requestBody": {
+            "description": "A reference model containing UIDs to reprocess",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/library-file/shrinkage": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Gets total shrinkage of all processed library files",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ShrinkageData"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ShrinkageData"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ShrinkageData"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/shrinkage-bar-chart": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Gets the shrinkage data for a bar chart",
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/library-file/shrinkage-groups": {
+        "get": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Get library file shrinkage grouped by library",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "$ref": "#/components/schemas/ShrinkageData"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "$ref": "#/components/schemas/ShrinkageData"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "$ref": "#/components/schemas/ShrinkageData"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/library-file/search": {
+        "post": {
+          "tags": [
+            "LibraryFile"
+          ],
+          "summary": "Performance a search for library files",
+          "requestBody": {
+            "description": "the search filter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryFileSearchModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryFileSearchModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryFileSearchModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/LibraryFile"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/log": {
+        "get": {
+          "tags": [
+            "Log"
+          ],
+          "summary": "Gets the system log",
+          "parameters": [
+            {
+              "name": "logLevel",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/LogType"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/log/log-sources": {
+        "get": {
+          "tags": [
+            "Log"
+          ],
+          "summary": "Get the available log sources",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ListOption"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ListOption"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ListOption"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/log/search": {
+        "post": {
+          "tags": [
+            "Log"
+          ],
+          "summary": "Searches the log using the given filter",
+          "requestBody": {
+            "description": "the search filter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogSearchModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogSearchModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogSearchModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/log/download": {
+        "get": {
+          "tags": [
+            "Log"
+          ],
+          "summary": "Downloads the full system log",
+          "parameters": [
+            {
+              "name": "source",
+              "in": "query",
+              "description": "the source to download from",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/log/message": {
+        "post": {
+          "tags": [
+            "Log"
+          ],
+          "summary": "Logs a message to the server",
+          "requestBody": {
+            "description": "The log message to log",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogServiceMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogServiceMessage"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogServiceMessage"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/node": {
+        "get": {
+          "tags": [
+            "Node"
+          ],
+          "summary": "Gets a list of all processing nodes in the system",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ProcessingNode"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ProcessingNode"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ProcessingNode"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Node"
+          ],
+          "summary": "Saves a processing node",
+          "requestBody": {
+            "description": "The node to save",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessingNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessingNode"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessingNode"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Node"
+          ],
+          "summary": "Delete processing nodes from the system",
+          "requestBody": {
+            "description": "A reference model containing UIDs to delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/node/{uid}": {
+        "get": {
+          "tags": [
+            "Node"
+          ],
+          "summary": "Get processing node",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the processing node",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/node/state/{uid}": {
+        "put": {
+          "tags": [
+            "Node"
+          ],
+          "summary": "Set state of a processing node",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the processing node",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "enable",
+              "in": "query",
+              "description": "Whether or not this node is enabled and will process files",
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/node/by-address/{address}": {
+        "get": {
+          "tags": [
+            "Node"
+          ],
+          "summary": "Get processing node by address",
+          "parameters": [
+            {
+              "name": "address",
+              "in": "path",
+              "description": "The address",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "version",
+              "in": "query",
+              "description": "The version of the node",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/node/register": {
+        "get": {
+          "tags": [
+            "Node"
+          ],
+          "summary": "Register a processing node.  If already registered will return existing instance",
+          "parameters": [
+            {
+              "name": "address",
+              "in": "query",
+              "description": "The address of the processing node",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Node"
+          ],
+          "summary": "Register a processing node.  If already registered will return existing instance",
+          "requestBody": {
+            "description": "The register model containing information about the processing node being registered",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProcessingNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/plugin": {
+        "get": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Get a list of all plugins in the system",
+          "parameters": [
+            {
+              "name": "includeElements",
+              "in": "query",
+              "description": "If data should contain all the elements for the plugins",
+              "schema": {
+                "type": "boolean",
+                "default": true
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PluginInfoModel"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PluginInfoModel"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PluginInfoModel"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Delete plugins from the system",
+          "requestBody": {
+            "description": "A reference model containing UIDs to delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/plugin/{uid}": {
+        "get": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Get the plugin info for a specific plugin",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The uid of the plugin",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PluginInfo"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PluginInfo"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PluginInfo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/plugin/by-package-name/{name}": {
+        "get": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Get the plugin info for a specific plugin by package name",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "description": "The package name of the plugin",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PluginInfo"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PluginInfo"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PluginInfo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/plugin/language/{langCode}.json": {
+        "get": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Get the plugins translation file",
+          "parameters": [
+            {
+              "name": "langCode",
+              "in": "query",
+              "description": "The language code to get the translations for",
+              "schema": {
+                "type": "string",
+                "default": "en"
+              }
+            },
+            {
+              "name": "langCode",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/plugin/plugin-packages": {
+        "get": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Get the available plugin packages",
+          "parameters": [
+            {
+              "name": "missing",
+              "in": "query",
+              "description": "If only missing plugins should be included, ie plugins not installed",
+              "schema": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PluginPackageInfo"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PluginPackageInfo"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PluginPackageInfo"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/plugin/update": {
+        "post": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Download the latest updates for plugins from the Plugin Repository",
+          "requestBody": {
+            "description": "The list of plugins to update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/plugin/download": {
+        "post": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Download plugins into the FileFlows system",
+          "requestBody": {
+            "description": "A list of plugins to download",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DownloadModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DownloadModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DownloadModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/plugin/download-package/{package}": {
+        "get": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Download the plugin ffplugin file .  Only intended to be used by the FlowRunnner",
+          "parameters": [
+            {
+              "name": "package",
+              "in": "path",
+              "description": "The plugin package name to download",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/plugin/{packageName}/settings": {
+        "get": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Gets the json plugin settings for a plugin",
+          "parameters": [
+            {
+              "name": "packageName",
+              "in": "path",
+              "description": "The full plugin name",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Plugin"
+          ],
+          "summary": "Sets the json plugin settings for a plugin",
+          "parameters": [
+            {
+              "name": "packageName",
+              "in": "path",
+              "description": "The full plugin name",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "the settings json",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/script": {
+        "get": {
+          "tags": [
+            "Script"
+          ],
+          "summary": "Gets all scripts in the system",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Script"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Script"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Script"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Script"
+          ],
+          "summary": "Saves a script",
+          "requestBody": {
+            "description": "The script to save",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Script"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Script"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Script"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Script"
+          ],
+          "summary": "Delete scripts from the system",
+          "requestBody": {
+            "description": "A reference model containing UIDs to delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/script/{uid}": {
+        "get": {
+          "tags": [
+            "Script"
+          ],
+          "summary": "Get a script",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "query",
+              "description": "The name of the script",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "uid",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/script/{name}/code": {
+        "get": {
+          "tags": [
+            "Script"
+          ],
+          "summary": "Gets the code for a script",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "description": "The name of the script",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/script/export/{name}": {
+        "get": {
+          "tags": [
+            "Script"
+          ],
+          "summary": "Exports a script",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "description": "The name of the script",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/script/import": {
+        "post": {
+          "tags": [
+            "Script"
+          ],
+          "summary": "Imports a script",
+          "parameters": [
+            {
+              "name": "filename",
+              "in": "query",
+              "description": "The name",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "The code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/script/duplicate/{name}": {
+        "get": {
+          "tags": [
+            "Script"
+          ],
+          "summary": "Duplicates a script",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Script"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/settings/fileflows-status": {
+        "get": {
+          "tags": [
+            "Settings"
+          ],
+          "summary": "Gets the system status of FileFlows",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/FileFlowsStatus"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/FileFlowsStatus"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/FileFlowsStatus"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/settings/check-update-available": {
+        "get": {
+          "tags": [
+            "Settings"
+          ],
+          "summary": "Checks latest version from fileflows.com",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/settings/ui-settings": {
+        "get": {
+          "tags": [
+            "Settings"
+          ],
+          "summary": "Get the system settings",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SettingsUiModel"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SettingsUiModel"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SettingsUiModel"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Settings"
+          ],
+          "summary": "Save the system settings",
+          "requestBody": {
+            "description": "the system settings to save",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SettingsUiModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SettingsUiModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SettingsUiModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/settings": {
+        "get": {
+          "tags": [
+            "Settings"
+          ],
+          "summary": "Get the system settings",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Settings"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Settings"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Settings"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/settings/test-db-connection": {
+        "post": {
+          "tags": [
+            "Settings"
+          ],
+          "summary": "Tests a database connection",
+          "requestBody": {
+            "description": "The database connection info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DbConnectionInfo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DbConnectionInfo"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DbConnectionInfo"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/settings/check-for-update-now": {
+        "post": {
+          "tags": [
+            "Settings"
+          ],
+          "summary": "Triggers a check for an update",
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/statistics/record": {
+        "post": {
+          "tags": [
+            "Statistics"
+          ],
+          "summary": "Records a statistic",
+          "requestBody": {
+            "description": "the statistic to record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Statistic"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Statistic"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Statistic"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/statistics/by-name/{name}": {
+        "get": {
+          "tags": [
+            "Statistics"
+          ],
+          "summary": "Gets statistics by name",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Statistic"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Statistic"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Statistic"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/status/update-available": {
+        "get": {
+          "tags": [
+            "Status"
+          ],
+          "summary": "Gets if an update is available",
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/status": {
+        "get": {
+          "tags": [
+            "Status"
+          ],
+          "summary": "Get the current status",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/StatusModel"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/StatusModel"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/StatusModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/version": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets the version of FileFlows",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/node-update-version": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets the version an node update available",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/node-updater-available": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets an node update available",
+          "parameters": [
+            {
+              "name": "version",
+              "in": "query",
+              "description": "the current version of the node",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "windows",
+              "in": "query",
+              "description": "if the update is for a windows system",
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/system/node-updater": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets the node updater",
+          "parameters": [
+            {
+              "name": "windows",
+              "in": "query",
+              "description": "if the update is for a windows system",
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/system/pause": {
+        "post": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Pauses the system",
+          "parameters": [
+            {
+              "name": "duration",
+              "in": "query",
+              "description": "duration in minutes to pause for, any number less than 1 will resume",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/system/info": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets the system information for the FileFlows server,\r\nwhich includes memory and CPU usage",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SystemInfo"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SystemInfo"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SystemInfo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/history-data/cpu": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets history CPU data of system information",
+          "parameters": [
+            {
+              "name": "since",
+              "in": "query",
+              "description": "data since a date",
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/history-data/memory": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets history memory data of system information",
+          "parameters": [
+            {
+              "name": "since",
+              "in": "query",
+              "description": "data since a date",
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/history-data/database-connections": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets history of open database connections",
+          "parameters": [
+            {
+              "name": "since",
+              "in": "query",
+              "description": "data since a date",
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SingleSystemValue"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/history-data/temp-storage": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets history temporary storage data of system information",
+          "parameters": [
+            {
+              "name": "since",
+              "in": "query",
+              "description": "data since a date",
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Int64SystemValue"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Int64SystemValue"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Int64SystemValue"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/history-data/log-storage": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets history logging storage data of system information",
+          "parameters": [
+            {
+              "name": "since",
+              "in": "query",
+              "description": "data since a date",
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Int64SystemValue"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Int64SystemValue"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Int64SystemValue"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/system/history-data/library-processing-time": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets history library processing time data",
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/system/history-data/processing-heatmap": {
+        "get": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Gets heat map data for the processing times of the system",
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/system/restart": {
+        "post": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Restarts FileFlows server",
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/system/node-system-statistics": {
+        "post": {
+          "tags": [
+            "System"
+          ],
+          "summary": "Records the node system statistics to the server",
+          "requestBody": {
+            "description": "the node system statistics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeSystemStatistics"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeSystemStatistics"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeSystemStatistics"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/tool": {
+        "get": {
+          "tags": [
+            "Tool"
+          ],
+          "summary": "Get all tools configured in the system",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Tool"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Tool"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Tool"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Tool"
+          ],
+          "summary": "Saves a tool",
+          "requestBody": {
+            "description": "The tool to save",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tool"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tool"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tool"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Tool"
+          ],
+          "summary": "Delete tools from the system",
+          "requestBody": {
+            "description": "A reference model containing UIDs to delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidReferenceModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/tool/{uid}": {
+        "get": {
+          "tags": [
+            "Tool"
+          ],
+          "summary": "Get tool",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the tool to get",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/tool/name/{name}": {
+        "get": {
+          "tags": [
+            "Tool"
+          ],
+          "summary": "Get a tool by its name, case insensitive",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "description": "The name of the tool",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Tool"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/worker/work/start": {
+        "post": {
+          "tags": [
+            "Worker"
+          ],
+          "summary": "Start work, tells the server work has started on a flow runner",
+          "requestBody": {
+            "description": "The info about the work starting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/FlowExecutorInfo"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/FlowExecutorInfo"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/FlowExecutorInfo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/worker/work/finish": {
+        "post": {
+          "tags": [
+            "Worker"
+          ],
+          "summary": "Finish work, tells the server work has finished on a flow runner",
+          "requestBody": {
+            "description": "Info about the finished work",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/worker/work/update": {
+        "post": {
+          "tags": [
+            "Worker"
+          ],
+          "summary": "Update work, tells the server about updated work on a flow runner",
+          "requestBody": {
+            "description": "The updated work information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowExecutorInfo"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/worker/clear/{nodeUid}": {
+        "post": {
+          "tags": [
+            "Worker"
+          ],
+          "summary": "Clear all workers from a node.  Intended for clean up in case a node restarts.  \r\nThis is called when a node first starts.",
+          "parameters": [
+            {
+              "name": "nodeUid",
+              "in": "path",
+              "description": "The UID of the processing node",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/worker": {
+        "get": {
+          "tags": [
+            "Worker"
+          ],
+          "summary": "Get all running flow executors",
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowExecutorInfo"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowExecutorInfo"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/FlowExecutorInfo"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/worker/{uid}/log": {
+        "get": {
+          "tags": [
+            "Worker"
+          ],
+          "summary": "Gets the log of a library file",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the library file",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "lineCount",
+              "in": "query",
+              "description": "The number of lines to fetch, 0 to fetch them all",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "default": 0
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/worker/by-file/{uid}": {
+        "delete": {
+          "tags": [
+            "Worker"
+          ],
+          "summary": "Abort work by library file",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the library file to abort",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/worker/{uid}": {
+        "delete": {
+          "tags": [
+            "Worker"
+          ],
+          "summary": "Abort work",
+          "parameters": [
+            {
+              "name": "uid",
+              "in": "path",
+              "description": "The UID of the executor",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "libraryFileUid",
+              "in": "query",
+              "description": "the UID of the library file",
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "ChangeValue": {
+          "type": "object",
+          "properties": {
+            "Property": {
+              "type": "string",
+              "nullable": true
+            },
+            "Value": {
+              "nullable": true
+            },
+            "WhenValue": {
+              "nullable": true
+            },
+            "WhenValueIsNot": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Condition": {
+          "type": "object",
+          "properties": {
+            "Property": {
+              "type": "string",
+              "nullable": true
+            },
+            "Value": {
+              "nullable": true
+            },
+            "IsNot": {
+              "type": "boolean"
+            },
+            "IsMatch": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ConfigurationStatus": {
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "Dashboard": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "Widgets": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Widget"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "DatabaseType": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "DbConnectionInfo": {
+          "type": "object",
+          "properties": {
+            "Server": {
+              "type": "string",
+              "description": "Gets or sets the server address",
+              "nullable": true
+            },
+            "Name": {
+              "type": "string",
+              "description": "Gets or sets the database name",
+              "nullable": true
+            },
+            "User": {
+              "type": "string",
+              "description": "Gets or sets the connecting user",
+              "nullable": true
+            },
+            "Password": {
+              "type": "string",
+              "description": "Gets or sets the password used",
+              "nullable": true
+            },
+            "Type": {
+              "$ref": "#/components/schemas/DatabaseType"
+            }
+          },
+          "additionalProperties": false,
+          "description": "Database connection details"
+        },
+        "DownloadModel": {
+          "type": "object",
+          "properties": {
+            "Packages": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "A list of plugin packages to download",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false,
+          "description": "Download model"
+        },
+        "ElementField": {
+          "type": "object",
+          "properties": {
+            "Order": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Type": {
+              "type": "string",
+              "nullable": true
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Placeholder": {
+              "type": "string",
+              "nullable": true
+            },
+            "Description": {
+              "type": "string",
+              "nullable": true
+            },
+            "InputType": {
+              "$ref": "#/components/schemas/FormInputType"
+            },
+            "UiOnly": {
+              "type": "boolean"
+            },
+            "Variables": {
+              "type": "object",
+              "additionalProperties": { },
+              "nullable": true
+            },
+            "Parameters": {
+              "type": "object",
+              "additionalProperties": { },
+              "nullable": true
+            },
+            "ChangeValues": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ChangeValue"
+              },
+              "nullable": true
+            },
+            "Validators": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Validator"
+              },
+              "nullable": true
+            },
+            "DisabledConditions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Condition"
+              },
+              "nullable": true
+            },
+            "Conditions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Condition"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "ExecutedNode": {
+          "type": "object",
+          "properties": {
+            "NodeName": {
+              "type": "string",
+              "nullable": true
+            },
+            "NodeUid": {
+              "type": "string",
+              "nullable": true
+            },
+            "ProcessingTime": {
+              "$ref": "#/components/schemas/TimeSpan"
+            },
+            "Output": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        },
+        "FileFlowsStatus": {
+          "type": "object",
+          "properties": {
+            "ConfigurationStatus": {
+              "$ref": "#/components/schemas/ConfigurationStatus"
+            },
+            "ExternalDatabase": {
+              "type": "boolean"
+            },
+            "Licensed": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "FileStatus": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            -3,
+            -2,
+            -1
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "Flow": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "Enabled": {
+              "type": "boolean"
+            },
+            "Description": {
+              "type": "string",
+              "nullable": true
+            },
+            "Type": {
+              "$ref": "#/components/schemas/FlowType"
+            },
+            "Template": {
+              "type": "string",
+              "nullable": true
+            },
+            "Parts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FlowPart"
+              },
+              "nullable": true
+            },
+            "Default": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "FlowConnection": {
+          "type": "object",
+          "properties": {
+            "Input": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Output": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "InputNode": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "additionalProperties": false
+        },
+        "FlowElement": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "nullable": true
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Description": {
+              "type": "string",
+              "nullable": true
+            },
+            "DisplayName": {
+              "type": "string",
+              "nullable": true,
+              "readOnly": true
+            },
+            "Icon": {
+              "type": "string",
+              "nullable": true
+            },
+            "Variables": {
+              "type": "object",
+              "additionalProperties": { },
+              "nullable": true
+            },
+            "NoEditorOnAdd": {
+              "type": "boolean"
+            },
+            "Inputs": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Outputs": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "HelpUrl": {
+              "type": "string",
+              "nullable": true
+            },
+            "Type": {
+              "$ref": "#/components/schemas/FlowElementType"
+            },
+            "FailureNode": {
+              "type": "boolean"
+            },
+            "Group": {
+              "type": "string",
+              "nullable": true
+            },
+            "OutputLabels": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "Fields": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ElementField"
+              },
+              "nullable": true
+            },
+            "Model": {
+              "type": "object",
+              "additionalProperties": { },
+              "nullable": true
+            },
+            "Obsolete": {
+              "type": "boolean"
+            },
+            "ObsoleteMessage": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "FlowElementType": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "FlowExecutorInfo": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "NodeUid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "NodeName": {
+              "type": "string",
+              "nullable": true
+            },
+            "Log": {
+              "type": "string",
+              "nullable": true
+            },
+            "LibraryFile": {
+              "$ref": "#/components/schemas/LibraryFile"
+            },
+            "RelativeFile": {
+              "type": "string",
+              "nullable": true
+            },
+            "Library": {
+              "$ref": "#/components/schemas/ObjectReference"
+            },
+            "LibraryPath": {
+              "type": "string",
+              "nullable": true
+            },
+            "Fingerprint": {
+              "type": "boolean"
+            },
+            "InitialSize": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "WorkingFile": {
+              "type": "string",
+              "nullable": true
+            },
+            "IsDirectory": {
+              "type": "boolean"
+            },
+            "TotalParts": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "CurrentPart": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "CurrentPartName": {
+              "type": "string",
+              "nullable": true
+            },
+            "CurrentPartPercent": {
+              "type": "number",
+              "format": "float"
+            },
+            "LastUpdate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "StartedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "ProcessingTime": {
+              "$ref": "#/components/schemas/TimeSpan"
+            }
+          },
+          "additionalProperties": false
+        },
+        "FlowListModel": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Type": {
+              "$ref": "#/components/schemas/FlowType"
+            },
+            "Default": {
+              "type": "boolean"
+            },
+            "UsedBy": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ObjectReference"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "FlowPart": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "FlowElementUid": {
+              "type": "string",
+              "nullable": true
+            },
+            "xPos": {
+              "type": "number",
+              "format": "float"
+            },
+            "yPos": {
+              "type": "number",
+              "format": "float"
+            },
+            "Icon": {
+              "type": "string",
+              "nullable": true
+            },
+            "Label": {
+              "type": "string",
+              "nullable": true
+            },
+            "Inputs": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Outputs": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "OutputConnections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FlowConnection"
+              },
+              "nullable": true
+            },
+            "Type": {
+              "$ref": "#/components/schemas/FlowElementType"
+            },
+            "Model": {
+              "type": "object",
+              "additionalProperties": { },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "FlowTemplateModel": {
+          "type": "object",
+          "properties": {
+            "Flow": {
+              "$ref": "#/components/schemas/Flow"
+            },
+            "Fields": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/TemplateField"
+              },
+              "nullable": true
+            },
+            "Order": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "Save": {
+              "type": "boolean"
+            },
+            "Type": {
+              "$ref": "#/components/schemas/FlowType"
+            }
+          },
+          "additionalProperties": false
+        },
+        "FlowType": {
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "FormInputType": {
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "GuidReferenceModel": {
+          "type": "object",
+          "properties": {
+            "Uids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Int64SystemValue": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "y": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "additionalProperties": false
+        },
+        "LibaryFileListModel": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "RelativePath": {
+              "type": "string",
+              "nullable": true
+            },
+            "Duplicate": {
+              "type": "string",
+              "nullable": true
+            },
+            "FinalSize": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            },
+            "Flow": {
+              "type": "string",
+              "nullable": true
+            },
+            "Library": {
+              "type": "string",
+              "nullable": true
+            },
+            "Node": {
+              "type": "string",
+              "nullable": true
+            },
+            "OriginalSize": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            },
+            "OutputPath": {
+              "type": "string",
+              "nullable": true
+            },
+            "ProcessingTime": {
+              "$ref": "#/components/schemas/TimeSpan"
+            },
+            "Date": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "Status": {
+              "$ref": "#/components/schemas/FileStatus"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Library": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "Enabled": {
+              "type": "boolean"
+            },
+            "Path": {
+              "type": "string",
+              "nullable": true
+            },
+            "Filter": {
+              "type": "string",
+              "nullable": true
+            },
+            "ExclusionFilter": {
+              "type": "string",
+              "nullable": true
+            },
+            "Template": {
+              "type": "string",
+              "nullable": true
+            },
+            "Description": {
+              "type": "string",
+              "nullable": true
+            },
+            "Flow": {
+              "$ref": "#/components/schemas/ObjectReference"
+            },
+            "SkipFileAccessTests": {
+              "type": "boolean"
+            },
+            "Scan": {
+              "type": "boolean"
+            },
+            "Folders": {
+              "type": "boolean"
+            },
+            "UseFingerprinting": {
+              "type": "boolean"
+            },
+            "WaitTimeSeconds": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "ExcludeHidden": {
+              "type": "boolean"
+            },
+            "Schedule": {
+              "type": "string",
+              "nullable": true
+            },
+            "LastScanned": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "ReprocessRecreatedFiles": {
+              "type": "boolean"
+            },
+            "LastScannedAgo": {
+              "$ref": "#/components/schemas/TimeSpan"
+            },
+            "ScanInterval": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "FileSizeDetectionInterval": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Priority": {
+              "$ref": "#/components/schemas/ProcessingPriority"
+            },
+            "ProcessingOrder": {
+              "$ref": "#/components/schemas/ProcessingOrder"
+            },
+            "HoldMinutes": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        },
+        "LibraryFile": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "RelativePath": {
+              "type": "string",
+              "nullable": true
+            },
+            "OutputPath": {
+              "type": "string",
+              "nullable": true
+            },
+            "Flow": {
+              "$ref": "#/components/schemas/ObjectReference"
+            },
+            "ExecutedNodes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ExecutedNode"
+              },
+              "nullable": true
+            },
+            "Library": {
+              "$ref": "#/components/schemas/ObjectReference"
+            },
+            "Duplicate": {
+              "$ref": "#/components/schemas/ObjectReference"
+            },
+            "OriginalSize": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "FinalSize": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "Fingerprint": {
+              "type": "string",
+              "nullable": true
+            },
+            "Node": {
+              "$ref": "#/components/schemas/ObjectReference"
+            },
+            "WorkerUid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "ProcessingStarted": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "ProcessingEnded": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "Status": {
+              "$ref": "#/components/schemas/FileStatus"
+            },
+            "NoLongerExistsAfterProcessing": {
+              "type": "boolean"
+            },
+            "Order": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "IsDirectory": {
+              "type": "boolean"
+            },
+            "ProcessingTime": {
+              "$ref": "#/components/schemas/TimeSpan"
+            },
+            "CreationTime": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "LastWriteTime": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        "LibraryFileDatalistModel": {
+          "type": "object",
+          "properties": {
+            "LibraryFiles": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/LibaryFileListModel"
+              },
+              "nullable": true
+            },
+            "Status": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/LibraryStatus"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "LibraryFileSearchModel": {
+          "type": "object",
+          "properties": {
+            "Path": {
+              "type": "string",
+              "nullable": true
+            },
+            "FromDate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "ToDate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "LibraryName": {
+              "type": "string",
+              "nullable": true
+            },
+            "Limit": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        },
+        "LibraryStatus": {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Status": {
+              "$ref": "#/components/schemas/FileStatus"
+            },
+            "Count": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ListOption": {
+          "type": "object",
+          "properties": {
+            "Label": {
+              "type": "string",
+              "nullable": true
+            },
+            "Value": {
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "LogSearchModel": {
+          "type": "object",
+          "properties": {
+            "Message": {
+              "type": "string",
+              "nullable": true
+            },
+            "Source": {
+              "type": "string",
+              "nullable": true
+            },
+            "Type": {
+              "$ref": "#/components/schemas/LogType"
+            },
+            "TypeIncludeHigherSeverity": {
+              "type": "boolean"
+            },
+            "FromDate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "ToDate": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        "LogServiceMessage": {
+          "type": "object",
+          "properties": {
+            "NodeAddress": {
+              "type": "string",
+              "nullable": true
+            },
+            "Type": {
+              "$ref": "#/components/schemas/LogType"
+            },
+            "Arguments": {
+              "type": "array",
+              "items": { },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "LogType": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "NextLibraryFileArgs": {
+          "type": "object",
+          "properties": {
+            "NodeName": {
+              "type": "string",
+              "nullable": true
+            },
+            "NodeUid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "NodeVersion": {
+              "type": "string",
+              "nullable": true
+            },
+            "WorkerUid": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "additionalProperties": false
+        },
+        "NextLibraryFileResult": {
+          "type": "object",
+          "properties": {
+            "File": {
+              "$ref": "#/components/schemas/LibraryFile"
+            },
+            "Status": {
+              "$ref": "#/components/schemas/NextLibraryFileStatus"
+            }
+          },
+          "additionalProperties": false
+        },
+        "NextLibraryFileStatus": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "NodeSystemStatistics": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "TemporaryDirectorySize": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "LogDirectorySize": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "RecordedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ObjectReference": {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Type": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "OperatingSystemType": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "PluginInfo": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "Enabled": {
+              "type": "boolean"
+            },
+            "Version": {
+              "type": "string",
+              "nullable": true
+            },
+            "Deleted": {
+              "type": "boolean"
+            },
+            "HasSettings": {
+              "type": "boolean"
+            },
+            "Url": {
+              "type": "string",
+              "nullable": true
+            },
+            "Authors": {
+              "type": "string",
+              "nullable": true
+            },
+            "Description": {
+              "type": "string",
+              "nullable": true
+            },
+            "MinimumVersion": {
+              "type": "string",
+              "nullable": true
+            },
+            "PackageName": {
+              "type": "string",
+              "nullable": true
+            },
+            "Settings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ElementField"
+              },
+              "nullable": true
+            },
+            "Elements": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FlowElement"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "PluginInfoModel": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "Enabled": {
+              "type": "boolean"
+            },
+            "Version": {
+              "type": "string",
+              "nullable": true
+            },
+            "Deleted": {
+              "type": "boolean"
+            },
+            "HasSettings": {
+              "type": "boolean"
+            },
+            "Url": {
+              "type": "string",
+              "nullable": true
+            },
+            "Authors": {
+              "type": "string",
+              "nullable": true
+            },
+            "Description": {
+              "type": "string",
+              "nullable": true
+            },
+            "MinimumVersion": {
+              "type": "string",
+              "nullable": true
+            },
+            "PackageName": {
+              "type": "string",
+              "nullable": true
+            },
+            "Settings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ElementField"
+              },
+              "nullable": true
+            },
+            "Elements": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FlowElement"
+              },
+              "nullable": true
+            },
+            "LatestVersion": {
+              "type": "string",
+              "nullable": true
+            },
+            "UpdateAvailable": {
+              "type": "boolean",
+              "readOnly": true
+            },
+            "UsedBy": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ObjectReference"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "PluginPackageInfo": {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Version": {
+              "type": "string",
+              "nullable": true
+            },
+            "Authors": {
+              "type": "string",
+              "nullable": true
+            },
+            "Url": {
+              "type": "string",
+              "nullable": true
+            },
+            "Description": {
+              "type": "string",
+              "nullable": true
+            },
+            "Package": {
+              "type": "string",
+              "nullable": true
+            },
+            "MinimumVersion": {
+              "type": "string",
+              "nullable": true
+            },
+            "Elements": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "ProcessingLibraries": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "ProcessingNode": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "TempPath": {
+              "type": "string",
+              "nullable": true
+            },
+            "Address": {
+              "type": "string",
+              "nullable": true
+            },
+            "LastSeen": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "Enabled": {
+              "type": "boolean"
+            },
+            "OperatingSystem": {
+              "$ref": "#/components/schemas/OperatingSystemType"
+            },
+            "Version": {
+              "type": "string",
+              "nullable": true
+            },
+            "PreExecuteScript": {
+              "type": "string",
+              "nullable": true
+            },
+            "FlowRunners": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "SignalrUrl": {
+              "type": "string",
+              "nullable": true
+            },
+            "Mappings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/StringStringKeyValuePair"
+              },
+              "nullable": true
+            },
+            "Schedule": {
+              "type": "string",
+              "nullable": true
+            },
+            "DontChangeOwner": {
+              "type": "boolean"
+            },
+            "DontSetPermissions": {
+              "type": "boolean"
+            },
+            "Permissions": {
+              "type": "string",
+              "nullable": true
+            },
+            "AllLibraries": {
+              "$ref": "#/components/schemas/ProcessingLibraries"
+            },
+            "Libraries": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ObjectReference"
+              },
+              "nullable": true
+            },
+            "MaxFileSizeMb": {
+              "maximum": 10000000,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ProcessingOrder": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "ProcessingPriority": {
+          "enum": [
+            0,
+            5,
+            10,
+            -10,
+            -5
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "RegisterModel": {
+          "type": "object",
+          "properties": {
+            "Address": {
+              "type": "string",
+              "nullable": true
+            },
+            "TempPath": {
+              "type": "string",
+              "nullable": true
+            },
+            "FlowRunners": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Enabled": {
+              "type": "boolean"
+            },
+            "Mappings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/RegisterModelMapping"
+              },
+              "nullable": true
+            },
+            "OperatingSystem": {
+              "$ref": "#/components/schemas/OperatingSystemType"
+            },
+            "Version": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "RegisterModelMapping": {
+          "type": "object",
+          "properties": {
+            "Server": {
+              "type": "string",
+              "nullable": true
+            },
+            "Local": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Script": {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Code": {
+              "type": "string",
+              "nullable": true
+            },
+            "System": {
+              "type": "boolean"
+            },
+            "Uid": {
+              "type": "string",
+              "nullable": true
+            },
+            "UsedBy": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ObjectReference"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Settings": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "AutoUpdatePlugins": {
+              "type": "boolean"
+            },
+            "AutoUpdate": {
+              "type": "boolean"
+            },
+            "AutoUpdateNodes": {
+              "type": "boolean"
+            },
+            "DisableTelemetry": {
+              "type": "boolean"
+            },
+            "PluginRepositoryUrls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "LogQueueMessages": {
+              "type": "boolean"
+            },
+            "IsWindows": {
+              "type": "boolean"
+            },
+            "IsDocker": {
+              "type": "boolean"
+            },
+            "Version": {
+              "type": "string",
+              "nullable": true
+            },
+            "PausedUntil": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "IsPaused": {
+              "type": "boolean",
+              "readOnly": true
+            },
+            "LogFileRetention": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "LogDatabaseRetention": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "LogEveryRequest": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "SettingsUiModel": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "AutoUpdatePlugins": {
+              "type": "boolean"
+            },
+            "AutoUpdate": {
+              "type": "boolean"
+            },
+            "AutoUpdateNodes": {
+              "type": "boolean"
+            },
+            "DisableTelemetry": {
+              "type": "boolean"
+            },
+            "PluginRepositoryUrls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "LogQueueMessages": {
+              "type": "boolean"
+            },
+            "IsWindows": {
+              "type": "boolean"
+            },
+            "IsDocker": {
+              "type": "boolean"
+            },
+            "Version": {
+              "type": "string",
+              "nullable": true
+            },
+            "PausedUntil": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "IsPaused": {
+              "type": "boolean",
+              "readOnly": true
+            },
+            "LogFileRetention": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "LogDatabaseRetention": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "LogEveryRequest": {
+              "type": "boolean"
+            },
+            "LicenseEmail": {
+              "type": "string",
+              "nullable": true
+            },
+            "LicenseKey": {
+              "type": "string",
+              "nullable": true
+            },
+            "LicenseFlags": {
+              "type": "string",
+              "nullable": true
+            },
+            "LicenseExpiryDate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "LicenseProcessingNodes": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "LicenseStatus": {
+              "type": "string",
+              "nullable": true
+            },
+            "DbType": {
+              "$ref": "#/components/schemas/DatabaseType"
+            },
+            "DbServer": {
+              "type": "string",
+              "nullable": true
+            },
+            "DbName": {
+              "type": "string",
+              "nullable": true
+            },
+            "DbUser": {
+              "type": "string",
+              "nullable": true
+            },
+            "DbPassword": {
+              "type": "string",
+              "nullable": true
+            },
+            "RecreateDatabase": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ShrinkageData": {
+          "type": "object",
+          "properties": {
+            "Library": {
+              "type": "string",
+              "nullable": true
+            },
+            "OriginalSize": {
+              "type": "number",
+              "format": "double"
+            },
+            "FinalSize": {
+              "type": "number",
+              "format": "double"
+            },
+            "Items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Difference": {
+              "type": "number",
+              "format": "double",
+              "readOnly": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "SingleSystemValue": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "y": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Statistic": {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string",
+              "description": "Gets or sets the name of the statistic",
+              "nullable": true
+            },
+            "Value": {
+              "description": "Gets or sets the value",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false,
+          "description": "A statistic"
+        },
+        "StatusModel": {
+          "type": "object",
+          "properties": {
+            "queue": {
+              "type": "integer",
+              "description": "Gets the number of items in the queue",
+              "format": "int32"
+            },
+            "processing": {
+              "type": "integer",
+              "description": "Gets the number of files being processed",
+              "format": "int32"
+            },
+            "processed": {
+              "type": "integer",
+              "description": "Gets the number of files that have been processed",
+              "format": "int32"
+            },
+            "time": {
+              "type": "string",
+              "description": "Gets the processing time of the longest running item in the queue",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false,
+          "description": "The current status"
+        },
+        "StringReferenceModel": {
+          "type": "object",
+          "properties": {
+            "Uids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "StringStringKeyValuePair": {
+          "type": "object",
+          "properties": {
+            "Key": {
+              "type": "string",
+              "nullable": true
+            },
+            "Value": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "SystemInfo": {
+          "type": "object",
+          "properties": {
+            "MemoryUsage": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "CpuUsage": {
+              "type": "number",
+              "format": "float"
+            },
+            "IsPaused": {
+              "type": "boolean"
+            },
+            "PausedUntil": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        "TemplateField": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Type": {
+              "type": "string",
+              "nullable": true
+            },
+            "Required": {
+              "type": "boolean"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Label": {
+              "type": "string",
+              "nullable": true
+            },
+            "Help": {
+              "type": "string",
+              "nullable": true
+            },
+            "Default": {
+              "nullable": true
+            },
+            "Value": {
+              "nullable": true
+            },
+            "Parameters": {
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "TimeSpan": {
+          "type": "object",
+          "properties": {
+            "Ticks": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "Days": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Hours": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Milliseconds": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Minutes": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Seconds": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "TotalDays": {
+              "type": "number",
+              "format": "double",
+              "readOnly": true
+            },
+            "TotalHours": {
+              "type": "number",
+              "format": "double",
+              "readOnly": true
+            },
+            "TotalMilliseconds": {
+              "type": "number",
+              "format": "double",
+              "readOnly": true
+            },
+            "TotalMinutes": {
+              "type": "number",
+              "format": "double",
+              "readOnly": true
+            },
+            "TotalSeconds": {
+              "type": "number",
+              "format": "double",
+              "readOnly": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Tool": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "DateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "DateModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "Path": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Validator": {
+          "type": "object",
+          "properties": {
+            "Type": {
+              "type": "string",
+              "nullable": true,
+              "readOnly": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Widget": {
+          "type": "object",
+          "properties": {
+            "Width": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Height": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "X": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Y": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "WidgetDefinitionUid": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "additionalProperties": false
+        },
+        "WidgetType": {
+          "enum": [
+            1,
+            2,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "WidgetUiModel": {
+          "type": "object",
+          "properties": {
+            "Uid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "Url": {
+              "type": "string",
+              "nullable": true
+            },
+            "Icon": {
+              "type": "string",
+              "nullable": true
+            },
+            "Name": {
+              "type": "string",
+              "nullable": true
+            },
+            "Type": {
+              "$ref": "#/components/schemas/WidgetType"
+            },
+            "Flags": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Width": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Height": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "X": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "Y": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  }
