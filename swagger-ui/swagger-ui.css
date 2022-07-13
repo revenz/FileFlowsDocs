@@ -9242,7 +9242,7 @@
 }
 
 .swagger-ui .opblock-tag {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 24px;
   margin: 0 0 5px
@@ -9257,7 +9257,7 @@
 }
 
 .swagger-ui .opblock-tag small {
-  color: #3b4151;
+  color: var(--color);
   flex: 2;
   font-family: sans-serif;
   font-size: 14px;
@@ -9274,7 +9274,7 @@
 }
 
 .swagger-ui .parameter__type {
-  color: #3b4151;
+  color: var(--color);
   font-family: monospace;
   font-size: 12px;
   font-weight: 600;
@@ -9387,7 +9387,7 @@
 
 .swagger-ui .opblock .opblock-section-header>label {
   align-items: center;
-  color: #3b4151;
+  color: var(--color);
   display: flex;
   font-family: sans-serif;
   font-size: 12px;
@@ -9400,7 +9400,7 @@
 }
 
 .swagger-ui .opblock .opblock-section-header h4 {
-  color: #3b4151;
+  color: var(--color);
   flex: 1;
   font-family: sans-serif;
   font-size: 14px;
@@ -9424,7 +9424,7 @@
 .swagger-ui .opblock .opblock-summary-path,
 .swagger-ui .opblock .opblock-summary-path__deprecated {
   align-items: center;
-  color: #3b4151;
+  color: var(--color);
   display: flex;
   font-family: monospace;
   font-size: 16px;
@@ -9456,7 +9456,7 @@
 }
 
 .swagger-ui .opblock .opblock-summary-description {
-  color: #3b4151;
+  color: var(--color);
   flex: 1 1 auto;
   font-family: sans-serif;
   font-size: 13px;
@@ -9657,7 +9657,7 @@
 }
 
 .swagger-ui .tab li {
-  color: #3b4151;
+  color: var(--color);
   cursor: pointer;
   font-family: sans-serif;
   font-size: 12px;
@@ -9697,7 +9697,7 @@
 .swagger-ui .opblock-description-wrapper,
 .swagger-ui .opblock-external-docs-wrapper,
 .swagger-ui .opblock-title_normal {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 12px;
   margin: 0 0 5px;
@@ -9707,7 +9707,7 @@
 .swagger-ui .opblock-description-wrapper h4,
 .swagger-ui .opblock-external-docs-wrapper h4,
 .swagger-ui .opblock-title_normal h4 {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 12px;
   margin: 0 0 5px
@@ -9716,7 +9716,7 @@
 .swagger-ui .opblock-description-wrapper p,
 .swagger-ui .opblock-external-docs-wrapper p,
 .swagger-ui .opblock-title_normal p {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 14px;
   margin: 0
@@ -9759,7 +9759,7 @@
 
 .swagger-ui .responses-inner h4,
 .swagger-ui .responses-inner h5 {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 12px;
   margin: 10px 0 5px
@@ -9770,7 +9770,7 @@
 }
 
 .swagger-ui .response-col_status {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 14px
 }
@@ -9783,7 +9783,7 @@
 }
 
 .swagger-ui .response-col_links {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 14px;
   max-width: 40em;
@@ -9883,7 +9883,7 @@
 }
 
 .swagger-ui .scheme-container .schemes>label {
-  color: #3b4151;
+  color: var(--color);
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
@@ -9912,7 +9912,7 @@
 }
 
 .swagger-ui .loading-container .loading:after {
-  color: #3b4151;
+  color: var(--color);
   content: "loading";
   font-family: sans-serif;
   font-size: 10px;
@@ -10014,7 +10014,7 @@
 }
 
 .swagger-ui section h3 {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif
 }
 
@@ -10082,7 +10082,7 @@
   border: 2px solid gray;
   border-radius: 4px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -10259,7 +10259,7 @@
   border: 2px solid #41444e;
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .25);
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -10290,7 +10290,7 @@
 }
 
 .swagger-ui label {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -10403,7 +10403,7 @@
   background: hsla(0, 0%, 100%, .8);
   border: none;
   border-radius: 4px;
-  color: #3b4151;
+  color: var(--color);
   font-family: monospace;
   font-size: 12px;
   font-weight: 600;
@@ -10441,7 +10441,7 @@
 }
 
 .swagger-ui .checkbox p {
-  color: #3b4151;
+  color: var(--color);
   font-family: monospace;
   font-style: italic;
   font-weight: 400 !important;
@@ -10517,14 +10517,14 @@
 
 .swagger-ui .dialog-ux .modal-ux-content p {
   color: #41444e;
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 12px;
   margin: 0 0 5px
 }
 
 .swagger-ui .dialog-ux .modal-ux-content h4 {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -10548,7 +10548,7 @@
 }
 
 .swagger-ui .dialog-ux .modal-ux-header h3 {
-  color: #3b4151;
+  color: var(--color);
   flex: 1;
   font-family: sans-serif;
   font-size: 20px;
@@ -10558,7 +10558,7 @@
 }
 
 .swagger-ui .model {
-  color: #3b4151;
+  color: var(--color);
   font-family: monospace;
   font-size: 12px;
   font-weight: 300;
@@ -10816,7 +10816,7 @@
 }
 
 .swagger-ui .servers>label {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 12px;
   margin: -20px 15px 0 0
@@ -10889,7 +10889,7 @@
 }
 
 .swagger-ui table.headers td {
-  color: #3b4151;
+  color: var(--color);
   font-family: monospace;
   font-size: 12px;
   font-weight: 300;
@@ -10915,7 +10915,7 @@
 .swagger-ui table thead tr td,
 .swagger-ui table thead tr th {
   border-bottom: 1px solid rgba(59, 65, 81, .2);
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -10938,7 +10938,7 @@
 }
 
 .swagger-ui .parameter__name {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -11115,7 +11115,7 @@
 .swagger-ui .info li,
 .swagger-ui .info p,
 .swagger-ui .info table {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 14px
 }
@@ -11125,7 +11125,7 @@
 .swagger-ui .info h3,
 .swagger-ui .info h4,
 .swagger-ui .info h5 {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif
 }
 
@@ -11145,7 +11145,7 @@
 }
 
 .swagger-ui .info .base-url {
-  color: #3b4151;
+  color: var(--color);
   font-family: monospace;
   font-size: 12px;
   font-weight: 300 !important;
@@ -11154,7 +11154,7 @@
 }
 
 .swagger-ui .info .title {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 36px;
   margin: 0
@@ -11234,7 +11234,7 @@
   background-color: #fee;
   border-radius: 4px;
   color: red;
-  color: #3b4151;
+  color: var(--color);
   font-family: monospace;
   font-size: 12px;
   font-weight: 600;
@@ -11248,7 +11248,7 @@
 }
 
 .swagger-ui .scopes h2 {
-  color: #3b4151;
+  color: var(--color);
   font-family: sans-serif;
   font-size: 14px
 }
@@ -11280,7 +11280,7 @@
 }
 
 .swagger-ui .errors-wrapper .errors h4 {
-  color: #3b4151;
+  color: var(--color);
   font-family: monospace;
   font-size: 14px;
   font-weight: 600;
@@ -11310,7 +11310,7 @@
 }
 
 .swagger-ui .errors-wrapper hgroup h4 {
-  color: #3b4151;
+  color: var(--color);
   flex: 1;
   font-family: sans-serif;
   font-size: 20px;
