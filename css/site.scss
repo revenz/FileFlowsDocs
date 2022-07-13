@@ -223,3 +223,12 @@ td {
 tr:hover td {
     background:rgba(var(--accent-rgb), 0.4);
 }
+
+#search-container {
+    flex-grow:1;
+    text-align: right;    
+}
+#search-input {    
+    position: relative;
+    top: 0.5rem;
+}
