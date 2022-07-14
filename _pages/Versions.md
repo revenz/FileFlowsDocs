@@ -15,6 +15,7 @@ order: 900
   - New Widget: Storage Saved
   - New Widget: Audio Codecs
   - New Widget: Video Codec
+  - SQLite now keeps statistics for Video Codecs, Audio Codecs, Codecs, Resolution and Containers.
 - Premium Feature: Pre-Execute Script.  This allows you to assign a script to a processing node which it will execute before requesting a file to process.  If this script returns anything other than 1, the node will not get a file to process.
 - Flows types.  Flows are now separated into Standard and Failure.  
   - Can set a default Failure flow.  If none is set then no failure flow will be used when a flow fails
@@ -29,7 +30,7 @@ order: 900
 - Sleep: New Node add to sleep, and new Sleep function exposed in the function nodes/scripts.
 - Process is now shown in the window title
 - Added ability to enable/disable hardware encoding/decoding in a function/script
-```
+```js
 Variables.NoNvidia = true
 Variables.NoQSV = true
 Variables.NoVAAPI = true
