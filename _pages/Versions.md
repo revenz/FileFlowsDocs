@@ -6,6 +6,60 @@ layout: default
 order: 900
 ---
 
+## Version 0.9.0
+
+#### New
+- Premium Feature: Multiple Dashboards
+  - This moves the System page that was introduced in 0.8.4 into customizable widgets allowing the user to create multiple dashboards to view statistics
+  - New Widget: Open database connections
+  - New Widget: Storage Saved
+  - New Widget: Audio Codecs
+  - New Widget: Video Codec
+- Premium Feature: Pre-Execute Script.  This allows you to assign a script to a processing node which it will execute before requesting a file to process.  If this script returns anything other than 1, the node will not get a file to process.
+- Flows types.  Flows are now separated into Standard and Failure.  
+  - Can set a default Failure flow.  If none is set then no failure flow will be used when a flow fails
+- Hold Period added to libraries.  This allows you to hold any found files for a configured amount of minutes.  These files will not be processed until after that time
+- Scripts: Moved out of database and into a "Scripts" folder.  
+  - System: These are system scripts that cannot be edited and will be recreated each time FileFlows is started
+  - User: These are user created scripts
+- In Use
+  - Scripts, Flows and Plugins now have an in use indicator and cannot be deleted if in use
+  - New dialog to show what is using an item
+- Database is now using a better connection pool which will wait for a connection instead of failing
+- Sleep: New Node add to sleep, and new Sleep function exposed in the function nodes/scripts.
+- Process is now shown in the window title
+- Added ability to enable/disable hardware encoding/decoding in a function/script
+```
+Variables.NoNvidia = true
+Variables.NoQSV = true
+Variables.NoVAAPI = true
+Variables.NoAMD = true
+```
+- Added Hostname variable to functions/scripts which contains the hostname of the executing node
+- First and last page added to pager
+- Datalist improvements, including shift to multi-select, ctrl to add single, clicking on an item now unselects other and only selects that row (unless shift or control is pressed)
+- New worker to update object references, so when you rename a flow that flow is updated in any files and libraries using it
+- New script 'NVIDIA - Below Encoder Limit'
+- Subtitle Track Merge now has an option to match filename
+- Library: When "Reprocess Recreated Files" is checked, if a file was deleted by a flow and is found again, that file will now be processed again regardless of the creation date.
+- Can now use failure flows in the Goto node
+- Side menu can now be collapsed
+- Added ctrl-s to save a function/script
+- Logs now auto-scroll if near the bottom
+- Added maximise button to file viewer
+- Improved look of toasts
+
+#### Fixed
+- MySQL move to the top wouldn't work if library priority was lower than other files
+- FFMPEG Builder: Fixed mapping of streams which could cause the wrong streams to be used in a file
+- Fixed issue with final size being zero if external process moved a file before the flow was completed
+- Fixed "Subtitle Track Merge" not actually merging the subtitle into the file 
+- Fixed issue converting 10 bit to 8 bit video when using NVIDIA hardware encoding
+- Fixed issue with function node name not being in the executed nodes list if that node name started with an "F"
+
+---
+
+
 ## Version 0.8.4
 
 #### New
