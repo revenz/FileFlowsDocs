@@ -15,19 +15,19 @@ order: 900
   - New Widget: Storage Saved
   - New Widget: Audio Codecs
   - New Widget: Video Codec
-  - SQLite now keeps statistics for Video Codecs, Audio Codecs, Codecs, Resolution and Containers.
+  - SQLite now keeps statistics for Video Codecs, Audio Codecs, Codecs, Resolution, and Containers.
 - Premium Feature: Pre-Execute Script.  This allows you to assign a script to a processing node which it will execute before requesting a file to process.  If this script returns anything other than 1, the node will not get a file to process.
 - Flows types.  Flows are now separated into Standard and Failure.  
   - Can set a default Failure flow.  If none is set then no failure flow will be used when a flow fails
 - Hold Period added to libraries.  This allows you to hold any found files for a configured amount of minutes.  These files will not be processed until after that time
-- Scripts: Moved out of database and into a "Scripts" folder.  
+- Scripts: Moved out of the database and into a "Scripts" folder.  
   - System: These are system scripts that cannot be edited and will be recreated each time FileFlows is started
-  - User: These are user created scripts
+  - User: These are user-created scripts
 - In Use
-  - Scripts, Flows and Plugins now have an in use indicator and cannot be deleted if in use
+  - Scripts, Flows, and Plugins now have an in-use indicator and cannot be deleted if in use
   - New dialog to show what is using an item
 - Database is now using a better connection pool which will wait for a connection instead of failing
-- Sleep: New Node add to sleep, and new Sleep function exposed in the function nodes/scripts.
+- Sleep: New Node add to sleep, and a new Sleep function is exposed in the function nodes/scripts.
 - Process is now shown in the window title
 - Added ability to enable/disable hardware encoding/decoding in a function/script
 ```js
@@ -37,17 +37,17 @@ Variables.NoVAAPI = true
 Variables.NoAMD = true
 ```
 - Added Hostname variable to functions/scripts which contains the hostname of the executing node
-- First and last page added to pager
+- First and the last page added to the pager
 - Datalist improvements, including shift to multi-select, ctrl to add single, clicking on an item now unselects other and only selects that row (unless shift or control is pressed)
 - New worker to update object references, so when you rename a flow that flow is updated in any files and libraries using it
 - New script 'NVIDIA - Below Encoder Limit'
-- Subtitle Track Merge now has an option to match filename
+- Subtitle Track Merge now has an option to match the filename
 - Library: When "Reprocess Recreated Files" is checked, if a file was deleted by a flow and is found again, that file will now be processed again regardless of the creation date.
 - Can now use failure flows in the Goto node
 - Side menu can now be collapsed
 - Added ctrl-s to save a function/script
 - Logs now auto-scroll if near the bottom
-- Added maximise button to file viewer
+- Added maximize button to file viewer
 - Improved look of toasts
 
 #### Fixed
