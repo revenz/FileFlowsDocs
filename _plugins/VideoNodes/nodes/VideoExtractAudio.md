@@ -6,7 +6,7 @@ layout: default
 plugin: Video Nodes
 ---
 
-{% include node.html outputs=2 icon="fas fa-file-audio" name="Video Extract Audio type="Input" %}
+{% include node.html outputs=2 icon="fas fa-file-audio" name="Video Extract Audio" type="Input" %}
 
 Extracts audio from a video file and saves it to a file
 
