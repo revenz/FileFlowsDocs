@@ -42,4 +42,101 @@ If will not execute, output 2, if nothing has been detected as needing to be exe
 | NoQSV | The disables Intel Quicksync Video hardware encoding/decoding | boolean | true |
 | NoAMD | The disables AMD/AMF hardware encoding/decoding | boolean | true |
 | NoVAAPI | The disables VAAPI hardware encoding/decoding | boolean | true |
+| FfmpegBuilderModel | The FFMPEG Builder model| object | see below |
 
+
+### FfmpegBuilderModel Object
+This object is the what the FFMPEG Builder uses to process a video.
+
+It has Video, Audio and Subtitle streams available to it.
+
+```ts
+// The video streams of the file
+VideoStreams:FfmpegVideoStream[]
+// The audio streams of the file
+AudioStreams:FfmpegAudioStream[]
+// The subtitle streams of the file
+SubtitleStreams:FfmpegSubtitleStream[]
+// Any metadata parameters to process
+MetadataParameters:string[]
+// The extension of the output file
+Extension:string
+// The input files
+InputFiles:string[]
+// Any custom parameters to add to the executor
+CustomParameters:string[]
+// If this should be forced encoded even if no changes are detected
+ForceEncode:bool
+// the original VideoInfo the FFMPEG Builder Start used to construct this model
+VideoInfo:VideoInfo
+```
+
+### FFmpegStream
+This is the common base class for each stream type
+```ts
+// If this stream should be removed from the output
+Deleted: bool
+// The overall index of the stream
+Index: number
+// The title of the stream
+Title: string
+// The language of the stream
+Language: string
+// If true this stream changes will be forced
+ForcedChange: bool
+```
+
+### FfmpegVideoStream : FfmpegStream
+This is a Video stream of the FfmpegBuilderModel, subclass of FfmpegStream
+
+```ts
+// The original VideoStream from VideoInfo 
+Stream:VideoStream
+// Any filters to be applied to the video, if set will force a change
+Filters:string[]
+// Any optional filters that should only be applied if a change is detected
+OptionalFilter:string[]
+// The encoding parameters of the video
+EncodingParameters:string[]
+// Any optional encoding parameters tha will only be used if there is encoding parameters etc
+OptionalEncodingParameters:string[]
+// Any additional parameters to be applied to this stream
+AdditionalParameters:string[]
+```
+
+### FfmpegAudioStream : FfmpegStream
+This is a audio stream of the FfmpegBuilderModel, subclass of FfmpegStream
+
+```ts
+// The original AudioStream from VideoInfo 
+Stream:AudioStream
+// Any filters to be applied to the audio, if set will force a change
+Filters:string[]
+// The encoding parameters of the audio
+EncodingParameters:string[]
+```
+
+### FfmpegSubtitleStream : FfmpegStream
+This is a subtitle stream of the FfmpegBuilderModel, subclass of FfmpegStream
+
+```ts
+// The original AudioStream from VideoInfo 
+Stream:SubtitleStream
+```
+
+### Example Function
+This example function will disable all subtitle and all but the very first Audio track
+```js
+for(let i=1;i<Variables?.FfmpegBuilderModel?.AudioStreams?.length;i++)
+{
+	let as = Variables.FfmpegBuilderModel.AudioStreams[i];
+	as.Deleted = true;
+}
+for(let i=0;i<Variables?.FfmpegBuilderModel?.SubtitleStreams?.length;i++)
+{
+	let sub = Variables.FfmpegBuilderModel.SubtitleStreams[i];
+	sub.Deleted = true;
+}
+
+return 1;
+```
