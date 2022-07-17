@@ -71,7 +71,7 @@ ForceEncode:bool
 VideoInfo:VideoInfo
 ```
 
-{% include VideoFile.html %}
+{% include VideoFile.md %}
 
 ### FFmpegStream
 This is the common base class for each stream type
