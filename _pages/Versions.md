@@ -6,6 +6,34 @@ layout: default
 order: 900
 ---
 
+## Version 0.9.1
+
+#### New
+- Exposing FFMPEG Builder now to functions/scripts.  See [documentation](/plugins/video-nodes/ffmpeg-builder) for more information
+- MySQL: Improved search in Files, now uses stored procedure with fuzzy logic
+- [FF-101](https://github.com/revenz/FileFlows/issues/101): Video now look for CodecTag and will set on the video object.  Video Has Stream can use this to test if a video has a codec tag. 
+- New Node: [Video Extract Audio](/plugins/video-nodes/video-extract-audio)
+- Added support links to forum and discord
+- Added a "Scan" button to the "Files" page.  This will block and wait for all enabled libraries to scan, then the files list will be reloaded.
+
+#### Fixed
+- Files were constantly being sent to unprocessed after completion if "Reprocess Recreated Files" was set incorrectly
+- Open Database Connections widget could not be added
+- Cancel New Dashboard would show an error
+- Black bar detection would fail on short videos
+- If the user script has the same name as a System script the user script will no longer "crash" the scripts from loading, it is now ignored
+- Blocked ctrl-s from read-only editors (e.g. the system script editor)
+- [FF-212](https://github.com/revenz/FileFlows/issues/212): Minor cosmetic log improvement
+- Fixed display of "Step 1/2" when the menu was collapsed
+- Deleting a flow now refreshes the list (which updates any "In Use" rows)
+- Fixed issue with Plex Analyze not working on Windows systems
+- Fixed issue with Logging and Temp folder calculation being wrong on dashboard widgets
+- Humanizing the "Step" on the dashboard progress widget 
+- Fixed the time series bottom period chart on the dashboard
+- Fixed issue where the language was not always parsed correctly on video audio streams
+
+---
+
 ## Version 0.9.0
 
 #### New
