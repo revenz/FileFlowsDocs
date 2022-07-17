@@ -26,4 +26,4 @@ Video File is an input node which will scan a file as its discovered by the libr
 | vi.Audio.Languages | List of all of audio track languages | string | en, deu, mao |
 | vi.Resolution | Computed resolution of file (4K, 1080p, 720p, 480p, SD) | string | 4K |
 
-{% include VideoFile.html %}
+{% include VideoFile.md %}
