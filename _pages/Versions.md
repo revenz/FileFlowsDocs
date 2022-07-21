@@ -6,6 +6,34 @@ layout: default
 order: 900
 ---
 
+## Version 0.9.2
+
+#### New
+- Premium: Revision History
+  - Available for Flows, Libraries, and Dashboards (will extend in a later version)
+  - This will save every change to these as a past revision allowing you to revert to a specific version or in case of deletion, to restore the deleted item
+- MySQL
+  - Drastically reduced database calls and improved performance
+  - Logging is now batched.  20 log lines will be written at a time.  This does mean logs will be delayed in the "Logs" view until 20 messages have been received.  This adds a few seconds to the live view of the logs between updates
+  - Cache Store: Caching some objects now for up to 1 minute.  E.g. processing nodes and executing files.  This means for every update from a worker those things do not need to be re-read from the database
+  - Smarter updating of in-progress files.  Only if a change is dedicated will a file be updated in the database.  Previously every update from the processing node triggered an update in the DB.  
+    - E.g. a percentage increase that didn't change the File object itself would be updated in the database
+  - In progress files directly update the database JSON data without needing to read the previous file object and cut the database queries in half.
+- Log Page: Scrolls to bottom when going to this page now
+- FFMPEG Builder: Subtitle Track Merge now will merge files with the language code in the filename
+  - Will parse a language code and HI, CC, SDH as well, for example, file.en.hi.srt will have the language set to "English (HI)"
+- SQLite: Automatically creates a backup database file on upgrade, e.g. FileFlows-0.9.0.sqlite.backup
+- Hold: You can now skip a file from being held
+- UI: Datalist now re-selects items during some operations (reverting a revision for example)
+- Resources are now loaded with a version number parameter to avoid caching between versions
+- Dashboards will now update widgets based on page focus.   If the browser page does not have focus some widgets will get updated less frequently (from 10 seconds to 20 seconds)
+- Docker now has dotnet installed to /dotnet with chmod 775
+
+#### Fixed
+- Basic dashboard would not refresh the chart
+
+---
+
 ## Version 0.9.1
 
 #### New
