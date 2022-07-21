@@ -6,6 +6,19 @@ layout: default
 order: 900
 ---
 
+## Version 0.9.3
+
+#### New
+- Added File count bubbles to the navigation menu to show 
+  - Unprocessed files
+  - Processing Files
+  - Failed files
+
+#### Fixed
+- SQLite: Slow Server queries introduced in 0.9.2
+
+---
+
 ## Version 0.9.2
 
 #### New
