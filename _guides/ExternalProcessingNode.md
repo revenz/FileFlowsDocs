@@ -14,8 +14,8 @@ A external processing node in docker requires the following set
 
 | Name | Type | Example |
 | :---: | :---: | :---: |
-| FFNODE | Environmental value set to 1 | -e FFNODE 1 |
-| Hostname | The hostname name, this is used to identify the node and needs to be constant | --hostname MyFFNode |
+| FFNODE | Environmental value set to 1 | \-e FFNODE 1 |
+| Hostname | The hostname name, this is used to identify the node and needs to be constant | \-\-hostname MyFFNode |
 
 ---
 
