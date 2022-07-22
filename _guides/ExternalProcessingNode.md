@@ -7,6 +7,16 @@ layout: default
 
 An external processing node, allows you to share or off loading the processing of files onto multiple systems, or a more powerful system.
 
+--- 
+
+## Docker
+A external processing node in docker requires the following set
+
+| Name | Type | Example |
+| :---: | :---: | :---: |
+| FFNODE | Environmental value set to 1 | -e FFNODE 1 |
+| Hostname | The hostname name, this is used to identify the node and needs to be constant | --hostname MyFFNode |
+
 ---
 
 ## Temporary Directory
